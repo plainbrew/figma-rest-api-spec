@@ -5487,32 +5487,91 @@ components:
         - type
         - key
     ComponentPropertyDefinition:
-      type: object
       description: A property of a component.
+      oneOf:
+        - $ref: "#/components/schemas/BooleanComponentPropertyDefinition"
+        - $ref: "#/components/schemas/TextComponentPropertyDefinition"
+        - $ref: "#/components/schemas/VariantComponentPropertyDefinition"
+        - $ref: "#/components/schemas/InstanceSwapComponentPropertyDefinition"
+      discriminator:
+        propertyName: type
+        mapping:
+          BOOLEAN: "#/components/schemas/BooleanComponentPropertyDefinition"
+          TEXT: "#/components/schemas/TextComponentPropertyDefinition"
+          VARIANT: "#/components/schemas/VariantComponentPropertyDefinition"
+          INSTANCE_SWAP: "#/components/schemas/InstanceSwapComponentPropertyDefinition"
+    BooleanComponentPropertyDefinition:
+      type: object
+      description: A boolean property of a component.
       properties:
         type:
-          $ref: "#/components/schemas/ComponentPropertyType"
+          type: string
+          enum:
+            - BOOLEAN
           description: Type of this component property.
         defaultValue:
-          oneOf:
-            - type: boolean
-            - type: string
+          type: boolean
+          description: Initial value of this property for instances.
+      required:
+        - type
+        - defaultValue
+    TextComponentPropertyDefinition:
+      type: object
+      description: A text property of a component.
+      properties:
+        type:
+          type: string
+          enum:
+            - TEXT
+          description: Type of this component property.
+        defaultValue:
+          type: string
+          description: Initial value of this property for instances.
+      required:
+        - type
+        - defaultValue
+    VariantComponentPropertyDefinition:
+      type: object
+      description: A variant property of a component.
+      properties:
+        type:
+          type: string
+          enum:
+            - VARIANT
+          description: Type of this component property.
+        defaultValue:
+          type: string
           description: Initial value of this property for instances.
         variantOptions:
           type: array
           items:
             type: string
-          description: All possible values for this property. Only exists on VARIANT
-            properties.
+          description: All possible values for this property.
+      required:
+        - type
+        - defaultValue
+        - variantOptions
+    InstanceSwapComponentPropertyDefinition:
+      type: object
+      description: An instance swap property of a component.
+      properties:
+        type:
+          type: string
+          enum:
+            - INSTANCE_SWAP
+          description: Type of this component property.
+        defaultValue:
+          type: string
+          description: Initial value of this property for instances.
         preferredValues:
           type: array
           items:
             $ref: "#/components/schemas/InstanceSwapPreferredValue"
-          description: Preferred values for this property. Only applicable if type is
-            `INSTANCE_SWAP`.
+          description: Preferred values for this property.
       required:
         - type
         - defaultValue
+        - preferredValues
     ComponentProperty:
       type: object
       description: A property of a component.
