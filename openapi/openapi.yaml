@@ -5675,6 +5675,7 @@ components:
       required:
         - type
         - value
+        - preferredValues
     Overrides:
       type: object
       description: Fields directly overridden on an instance. Inherited overrides are
