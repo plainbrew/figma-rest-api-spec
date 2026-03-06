@@ -1,21 +1,21 @@
 {
-  "name": "@figma/rest-api-spec",
+  "name": "@plainbrew/figma-rest-api-spec",
   "version": "0.36.0",
-  "description": "Typings for the Figma REST API",
+  "description": "Typings for the Figma REST API (fork of @figma/rest-api-spec with extended types)",
   "main": "dist/api_types.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/figma/rest-api-spec.git"
+    "url": "git+https://github.com/plainbrew/figma-rest-api-spec.git"
   },
   "keywords": [
     "figma",
     "REST",
     "typings"
   ],
-  "author": "Figma",
+  "author": "Plainbrew",
   "license": "MIT License",
   "bugs": {
-    "url": "https://github.com/figma/rest-api-spec/issues"
+    "url": "https://github.com/plainbrew/figma-rest-api-spec/issues"
   },
-  "homepage": "https://github.com/figma/rest-api-spec"
+  "homepage": "https://github.com/plainbrew/figma-rest-api-spec"
 }
