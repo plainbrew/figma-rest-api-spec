@@ -1,5 +1,8 @@
 # figma-rest-api-spec
 
+> **このリポジトリは移動しました。**
+> 新しい場所: [plainbrew/figma-api-client](https://github.com/plainbrew/figma-api-client/tree/main/packages/figma-rest-api-spec)
+
 > This is a fork of [figma/rest-api-spec](https://github.com/figma/rest-api-spec) with extended types.
 > Type adjustments made in this fork are also planned to be requested upstream to the original repository.
 
