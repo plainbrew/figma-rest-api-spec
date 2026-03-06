@@ -5598,12 +5598,6 @@ components:
         value:
           type: boolean
           description: Value of the property for this component instance.
-        boundVariables:
-          type: object
-          description: The variables bound to a particular field on this component property
-          properties:
-            value:
-              $ref: "#/components/schemas/VariableAlias"
       required:
         - type
         - value
@@ -5619,12 +5613,6 @@ components:
         value:
           type: string
           description: Value of the property for this component instance.
-        boundVariables:
-          type: object
-          description: The variables bound to a particular field on this component property
-          properties:
-            value:
-              $ref: "#/components/schemas/VariableAlias"
       required:
         - type
         - value
@@ -5649,6 +5637,7 @@ components:
       required:
         - type
         - value
+        - boundVariables
     InstanceSwapComponentProperty:
       type: object
       description: An instance swap property of a component.
@@ -5666,12 +5655,6 @@ components:
           items:
             $ref: "#/components/schemas/InstanceSwapPreferredValue"
           description: Preferred values for this property.
-        boundVariables:
-          type: object
-          description: The variables bound to a particular field on this component property
-          properties:
-            value:
-              $ref: "#/components/schemas/VariableAlias"
       required:
         - type
         - value
