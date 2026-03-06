@@ -1,6 +1,6 @@
 {
   "name": "@plainbrew/figma-rest-api-spec",
-  "version": "0.36.0",
+  "version": "0.1.0",
   "description": "Typings for the Figma REST API (fork of @figma/rest-api-spec with extended types)",
   "main": "dist/api_types.ts",
   "repository": {
