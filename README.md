@@ -1,10 +1,13 @@
-# rest-api-spec
+# figma-rest-api-spec
+
+> This is a fork of [figma/rest-api-spec](https://github.com/figma/rest-api-spec) with extended types.
+> Type adjustments made in this fork are also planned to be requested upstream to the original repository.
 
 This repository contains the OpenAPI specification and Typescript types for the [Figma REST API](https://www.figma.com/developers/api).
 
 [Changelog](https://www.figma.com/developers/api#changelog)
 
-Note: this specification is currently in beta. If you notice any inaccuracies with the specification, please [file an issue](https://github.com/figma/rest-api-spec/issues) in this repository.
+Note: this specification is currently in beta. If you notice any inaccuracies with the specification, please [file an issue](https://github.com/figma/rest-api-spec/issues) in the original repository.
 
 ## Usage
 
@@ -20,16 +23,15 @@ We use a custom code generator to convert the OpenAPI spec to TypeScript. While 
 To use these types in your Typescript code, install the package:
 
 ```sh
-npm install --save-dev @figma/rest-api-spec
+npm install --save-dev @plainbrew/figma-rest-api-spec
 ```
 
 Then import the types that you need:
 
 ```ts
-import { type GetFileResponse } from '@figma/rest-api-spec'
+import { type GetFileResponse } from '@plainbrew/figma-rest-api-spec'
 
 // Many popular HTTP clients let you annotate response types
 const result = await axios.get<GetFileResponse>(url);
 result.data // This has type GetFileResponse
 ```
-
